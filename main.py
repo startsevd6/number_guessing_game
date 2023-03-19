@@ -5,7 +5,8 @@ def is_valid(guessed_number):
 	if not guessed_number.isdigit():
 		pass
 	else:
-		if 0 < int(guessed_number) < 100 and guessed_number % 1 == 0:
+		guessed_number = int(guessed_number)
+		if 0 < guessed_number < 100 and guessed_number % 1 == 0:
 			return True
 	return False
 
@@ -24,7 +25,9 @@ while True:
 		print('Ваше число больше загаданного, попробуйте еще разок')
 	elif int(guessed_number) == number:
 		print('Вы угадали, поздравляем!')
+		attempt += 1
+		break
 	attempt += 1
 
 if attempt > 0:
-	(f'Спасибо, что играли в числовую угадайку. Вы угадали число за {attempt} попыток. Еще увидимся...')
+	print(f'Спасибо, что играли в числовую угадайку. Вы угадали число за {attempt} попыток. Еще увидимся...')
