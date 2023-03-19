@@ -8,6 +8,7 @@ def is_valid(guessed_number):
 
 
 number = randint(1, 100)
+attempt = 0
 print('Добро пожаловать в числовую угадайку')
 while True:
 	guessed_number = input()
@@ -19,5 +20,6 @@ while True:
 		print('Ваше число больше загаданного, попробуйте еще разок')
 	elif int(guessed_number) == number:
 		print('Вы угадали, поздравляем!')
+	attempt += 1
 
-print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
+print(f'Спасибо, что играли в числовую угадайку. Вы угадали число за {attempt} попыток. Еще увидимся...')
